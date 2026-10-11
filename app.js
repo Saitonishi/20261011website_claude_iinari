@@ -101,11 +101,16 @@ function init() {
   const base = {
     "地理院地図": L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
       { attribution: gsiAttr, maxZoom: 18 }),
+    "OpenStreetMap": L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      { attribution: osmAttr, maxZoom: 19 }),
+
+  /*
     "地理院 淡色": L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
       { attribution: gsiAttr, maxZoom: 18 }),
     "地理院 航空写真": L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
       { attribution: gsiAttr, maxZoom: 18 }),
-  };
+  */
+      };
   base["地理院地図"].addTo(map);
   const overlays = {};
   const layerControl = L.control.layers(base, overlays, { collapsed: true }).addTo(map);
@@ -124,7 +129,29 @@ function init() {
     }).catch(err => console.warn(err));
   });
 
-  // --- データ読み込み ---
+//--- ラスターレイヤー（画像・タイル）の追加処理 ---
+(cfg.EXTRA_RASTER_LAYERS || []).forEach(ras => {
+  let rasterLayer;
+
+  if (ras.type === 'image') {
+    // 1枚の画像を座標で位置合わせして配置する場合
+    rasterLayer = L.imageOverlay(ras.url, ras.bounds, {
+      opacity: ras.opacity !== undefined ? ras.opacity : 0.7,
+      interactive: false
+    });
+  } else {
+    // XYZタイル形式の場合
+    rasterLayer = L.tileLayer(ras.url, {
+      opacity: ras.opacity !== undefined ? ras.opacity : 0.7,
+      maxZoom: 19
+    });
+  }
+
+  // レイヤーコントロールに追加（初期状態では非表示にする場合は .addTo(map) を外します）
+  // rasterLayer.addTo(map); 
+  layerControl.addOverlay(rasterLayer, ras.name);
+});
+
   // --- データ読み込み ---
   let contentUrl = "sample-content.json";
   if (cfg.GAS_URL) {

@@ -16,5 +16,30 @@ const SITE_CONFIG = {
 
   // 追加で重ねたい QGIS のレイヤー（範囲・路線など）。使わなければ空のままでOK。
   // 例: { name: "旧村境", url: "layers/boundary.geojson", color: "#1d4e89" }
-  EXTRA_LAYERS: [],
+  EXTRA_LAYERS: [
+    {
+      name: "吉田村古図（画像重ね合わせ）",
+      type: "image",                            // 画像を重ねる場合
+      url: "./yoshidamurakozu.tiff",              // プロジェクトに置いた古地図画像
+      bounds: [
+        [35.017617829, 135.770349458],                    // 南西の座標 [緯度, 経度]
+        [35.030318488, 135.791455844]                     // 北東の座標 [緯度, 経度]
+      ],
+      opacity: 0.6                            // 透け具合（0.0〜1.0）
+    },
+    
+    {
+      name: "旧尾張藩邸", 
+      url: "./owarihantei.geojson",              // ベクターデータの GeoJSON ファイル
+      color: "#b20071",                            // 線の色
+      opacity: 0.6                            // 透け具合（0.0〜1.0）
+    },
+
+    {
+      name: "明治期の迅速測図（タイル）",
+      type: "tile",                             // タイル地図の場合
+      url: "https://cyberjapandata.gsi.go.jp/xyz/rapid_fig/{z}/{x}/{y}.png",
+      opacity: 0.7
+    }
+  ],
 };
