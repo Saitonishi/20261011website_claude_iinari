@@ -175,7 +175,7 @@ function init() {
       try { history.replaceState(null, "", "#id=" + encodeURIComponent(id)); } catch (e) { /* 無視 */ }
       if (fromUser) {
         map.panTo(layersById[id].getLatLng());
-        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        //panel.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
 
