@@ -16,5 +16,11 @@ const SITE_CONFIG = {
 
   // 追加で重ねたい QGIS のレイヤー（範囲・路線など）。使わなければ空のままでOK。
   // 例: { name: "旧村境", url: "layers/boundary.geojson", color: "#1d4e89" }
-  EXTRA_LAYERS: [],
+  EXTRA_LAYERS: [
+  {
+    name: "旧尾張藩邸",      // レイヤーコントロールに表示される名前
+    url: "add_map_data/owarihantei.geojson", // GeoJSONファイルのパス
+    color: "#c9009a"            // 線の色（お好みのカラーコード）
+  }
+  ],
 };
