@@ -1,0 +1,160 @@
+:root {
+  --paper: #faf6ee;
+  --ink: #2b2118;
+  --muted: #6d5f52;
+  --accent: #7a3b12;
+  --accent-soft: #c0622b;
+  --line: #d9cdb8;
+  --card: #fffdf8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.8;
+}
+
+h1, h2, h3 {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  line-height: 1.4;
+}
+
+.site-header {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.site-header h1 { margin: 0; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--accent); }
+.site-header .lead { margin: 4px 0 0; font-size: 0.9rem; color: var(--muted); }
+
+#map {
+  width: 100%;
+  height: 60vh;
+  min-height: 320px;
+  background: #e9e4d8;
+}
+
+.notice {
+  margin: 0;
+  padding: 8px 16px;
+  background: #fff3cd;
+  border-bottom: 1px solid #e6d28a;
+  font-size: 0.85rem;
+}
+
+.panel {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+.panel h2 {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+.placeholder { color: var(--muted); }
+
+.chapter {
+  margin: 0 0 28px;
+  padding: 4px 0 4px 16px;
+  border-left: 4px solid var(--accent-soft);
+}
+.chapter h3 { margin: 0 0 8px; font-size: 1.15rem; }
+.chapter-text { margin: 0 0 12px; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.gallery figure { margin: 0; }
+.thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--card);
+  cursor: zoom-in;
+}
+.thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.thumb:focus-visible { outline: 3px solid #1d4e89; outline-offset: 2px; }
+.gallery figcaption { margin-top: 4px; font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+.point-nav {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 16px 16px 0;
+}
+.point-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.point-list button {
+  padding: 6px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.point-list button.empty { opacity: 0.55; border-style: dashed; }
+.point-list button:hover { background: var(--accent); color: #fff; }
+
+.site-footer {
+  padding: 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+.site-footer p { margin: 0; }
+
+/* 写真の拡大表示 */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(20, 14, 8, 0.9);
+}
+.lightbox[hidden] { display: none; }
+.lightbox figure { margin: 0; max-width: 100%; text-align: center; }
+.lightbox img { max-width: 100%; max-height: 80vh; background: #000; }
+.lightbox figcaption { margin-top: 8px; color: #f3eadb; font-size: 0.9rem; }
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #map { height: 55vh; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}

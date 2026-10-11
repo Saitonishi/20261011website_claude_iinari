@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "id": "Y001", "name": "サンプル①　村はずれの道標" },
+      "geometry": { "type": "Point", "coordinates": [135.7866, 35.0251] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "Y002", "name": "サンプル②　古い石橋" },
+      "geometry": { "type": "Point", "coordinates": [135.7889, 35.0262] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "Y003", "name": "サンプル③　まだ解説のない地点" },
+      "geometry": { "type": "Point", "coordinates": [135.7841, 35.0239] }
+    }
+  ]
+}

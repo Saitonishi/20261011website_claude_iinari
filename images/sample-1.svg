@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#c0622b"/>
+  <text x="400" y="290" font-size="56" fill="#fff" text-anchor="middle" font-family="sans-serif">サンプル写真 1</text>
+  <text x="400" y="360" font-size="28" fill="#fff" fill-opacity="0.8" text-anchor="middle" font-family="sans-serif">ここに実際の写真が入ります</text>
+</svg>

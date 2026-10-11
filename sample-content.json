@@ -1,0 +1,19 @@
+{
+  "points": {
+    "Y001": {
+      "ch1": "【サンプル文】谷あいにひらけた集落で、東の山すそから湧く水が田を潤してきた。\n改行も、このように反映されます。",
+      "ch2": "【サンプル文】道標の脇には小さな祠があり、旅人の安全を祈る場所だったと伝わる。"
+    },
+    "Y002": {
+      "ch3": "【サンプル文】石を積んだ単純なアーチ橋。大正期の改修の跡が残る。",
+      "ch5": "【サンプル文】かつては橋のたもとで毎朝、野菜の市が立っていた。"
+    }
+  },
+  "photos": [
+    { "point_id": "Y001", "chapter": "ch1", "url": "images/sample-1.svg", "caption": "サンプル写真1（東の山すそ）", "order": 1 },
+    { "point_id": "Y001", "chapter": "ch1", "url": "images/sample-2.svg", "caption": "サンプル写真2（田の水路）", "order": 2 },
+    { "point_id": "Y001", "chapter": "ch2", "url": "images/sample-3.svg", "caption": "サンプル写真3（祠）", "order": 1 },
+    { "point_id": "Y002", "chapter": "ch3", "url": "images/sample-1.svg", "caption": "サンプル写真（石橋）", "order": 1 },
+    { "point_id": "Y002", "chapter": "ch4", "url": "images/sample-2.svg", "caption": "解説文がなく写真だけの章も表示されます", "order": 1 }
+  ]
+}
