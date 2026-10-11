@@ -98,6 +98,7 @@ function init() {
   // --- 地図 ---
   const map = L.map("map", { center: cfg.MAP_CENTER, zoom: cfg.MAP_ZOOM, maxZoom: 18 });
   const gsiAttr = '<a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>';
+  const osmAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'; 
   const base = {
     "地理院地図": L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
       { attribution: gsiAttr, maxZoom: 18 }),
