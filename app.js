@@ -194,6 +194,7 @@ function init() {
       map.fitBounds(geoLayer.getBounds().pad(0.3), { maxZoom: 17 });
     }
 
+  /*
     // ポイント一覧（スマホや、点が重なって押しにくいとき用）
     features.forEach(f => {
       const id = String(f.properties.id);
@@ -206,6 +207,7 @@ function init() {
       li.appendChild(btn);
       listEl.appendChild(li);
     });
+  */
 
     // URLの #id=Y001 で、開いた時点でそのポイントを表示
     const m = location.hash.match(/^#id=(.+)$/);
