@@ -125,7 +125,12 @@ function init() {
   });
 
   // --- データ読み込み ---
-  const contentUrl = cfg.GAS_URL ? cfg.GAS_URL + "?action=content" : "sample-content.json";
+  // --- データ読み込み ---
+  let contentUrl = "sample-content.json";
+  if (cfg.GAS_URL) {
+    const separator = cfg.GAS_URL.includes("?") ? "&" : "?";
+    contentUrl = cfg.GAS_URL + separator + "action=content";
+  }
   const contentPromise = fetchJson(contentUrl).catch(err => {
     console.warn(err);
     showNotice("解説データを読み込めませんでした。地図の点だけ表示します。");
