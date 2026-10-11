@@ -4,7 +4,7 @@
 const SITE_CONFIG = {
   // 登録フォーム用の Google Apps Script「ウェブアプリ」のURL（…/exec で終わるもの）
   // 空のままだと、同じフォルダの sample-content.json（サンプル）を表示します。
-  GAS_URL: "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnRMNbQsGY-65ae3naYSFl8iXGGevy7L_8hhpMA1f2E6ODK8y9hDfh3-p07ZIw6949SKrBMpC983M0usL3yYBvxqhr0NV44Mo6VXXGMqNBg_X4V7INi5D4pWQgXOkjyo7GBnEYe0CgwvRlhRdbXl1smWviP6JibbsEfKbaz2wGqjYL9m5qHJT4B_rFW1pTBagyxgGmlsNp7NiRfy-3F5JLqhzvy7hRAiAj6nD50D2zTa38itEFTA4V3B9rAVpT7jDjM6RGknOEU67kvgGOCcLwgNq35SEQ&lib=MP0L-79dtqQ-Ib2gskoWYUKH4pJ2ujTTZ",
+  GAS_URL: "https://script.google.com/macros/s/AKfycbyPEXVR8PAQ2OWpsQF50ylluQNT2CeKH5567krbVOE7wmcPsCZV47kchCbzk7_xF-KjBg/exec",
 
   // QGIS から書き出したポイントのファイル
   GEOJSON_URL: "points.geojson",
