@@ -7,7 +7,7 @@ const SITE_CONFIG = {
   GAS_URL: "https://script.google.com/macros/s/AKfycbwcsGLptrL9wJtEhSdPYLJP-mkB3v6NJlTLhYGTNLo-LYTcSMNG0ztKwSBJx-BnhepU4Q/exec",
 
   // QGIS から書き出したポイントのファイル
-  GEOJSON_URL: "points.geojson",
+  GEOJSON_URL: "https://raw.githubusercontent.com/Saitonishi/20261011website_claude_iinari/refs/heads/main/points.geojson",
 
   // 地図の初期位置（[緯度, 経度]）と拡大率。
   // ポイントが1つ以上あれば、全ポイントが入る位置に自動で合わせます。
